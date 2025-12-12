@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
-export default function FromInput({fetch}) {
+export default function FromInput({ fetchdata }) {
   const [formData, setFormData] = useState({
     name: "",
     lastname: "",
@@ -17,19 +17,19 @@ export default function FromInput({fetch}) {
     }));
   };
 
-  const submitFrom = (e) => {
+  const submitFrom = async (e) => {
     const URL = "https://67eca027aa794fb3222e43e2.mockapi.io/members";
     e.preventDefault();
     setLoading(true);
     try {
-      axios.post(URL, formData).then(() => {
+      await axios.post(URL, formData).then(() => {
         setFormData({ name: "", lastname: "", position: "" });
+        fetchdata();
       });
     } catch (error) {
       console.error("Cannot create user:", error);
     } finally {
       setLoading(false);
-      fetch();
     }
   };
   return (

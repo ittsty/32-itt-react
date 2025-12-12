@@ -11,9 +11,9 @@ export default function AdminView() {
   const fetchdata = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(URL);
-      setData(response.data);
-      console.log(response.data);
+      await axios.get(URL).then((response) => {
+        setData(response.data);
+      });
     } catch (error) {
       setError(error);
     } finally {
@@ -25,8 +25,9 @@ export default function AdminView() {
   const deleteData = async (id) => {
     const isConfirm = confirm("You sure you want to delete");
     if (!isConfirm) return;
-    await axios.delete(`${URL}/${id}`);
-    fetchdata();
+    await axios.delete(`${URL}/${id}`).then(() => {
+      fetchdata();
+    });
   };
 
   useEffect(() => {
@@ -36,7 +37,7 @@ export default function AdminView() {
   return (
     <div>
       <h2 className="text-2xl font-bold"> Create User here</h2>
-      <FromInput fetch={fetchdata} />
+      <FromInput fetchdata={fetchdata} />
       {loading ? (
         <h1>Loading...</h1>
       ) : (
