@@ -9,5 +9,7 @@
 th,td{
     border-width: 1px;
     border-color: var(--color-gray-400);
-    padding: calc(var(--spacing) * 2)
+    padding: calc(var(--spacing) * 2);
 }
+td{
+   font-weight: var(--font-weight-bold);}

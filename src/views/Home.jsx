@@ -9,7 +9,7 @@ export default function Home() {
     <div className="flex flex-col pt-30 pb-16 items-center">
       <h1>Generetion Thailand</h1>
       {view === "" && <h1>React - Assessment</h1>}
-      {view === "User" && <h1>Home - Userview</h1>}
+      {view === "User" && <h1>Home - User view</h1>}
       {view === "Admin" && <h1>Home - Admin view</h1>}
       <div className="flex gap-16 mt-6">
         <ViewToggle

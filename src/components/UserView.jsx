@@ -13,11 +13,9 @@ export default function UserView() {
       setLoading(true);
       const response = await axios.get(URL);
       setData(response.data);
-      console.log(response.data);
     } catch (error) {
       setError(error);
     } finally {
-      console.log("loading complete");
       setLoading(false);
     }
   };
@@ -41,9 +39,9 @@ export default function UserView() {
           <tbody>
             {data.map((item) => (
               <tr key={item.id}>
-                <th>{item.name}</th>
-                <th>{item.lastname}</th>
-                <th>{item.position}</th>
+                <td>{item.name}</td>
+                <td>{item.lastname}</td>
+                <td>{item.position}</td>
               </tr>
             ))}
           </tbody>

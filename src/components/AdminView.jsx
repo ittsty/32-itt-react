@@ -44,7 +44,7 @@ export default function AdminView() {
         <table className="table-auto w-full mt-4 p-2 text-center border-collapse border-spacing-2 border border-gray-400">
           <thead>
             <tr className="bg-gray-200">
-              <th className="p-2">Name</th>
+              <th>Name</th>
               <th>Last Name</th>
               <th>Position</th>
               <th className="w-2/10">Action</th>
@@ -53,10 +53,10 @@ export default function AdminView() {
           <tbody>
             {data.map((item) => (
               <tr key={item.id}>
-                <th>{item.name}</th>
-                <th>{item.lastname}</th>
-                <th>{item.position}</th>
-                <th>
+                <td>{item.name}</td>
+                <td>{item.lastname}</td>
+                <td>{item.position}</td>
+                <td>
                   <button
                     className="font-bold text-red-500 h-full hover:shadow-md p-1 rounded-md"
                     onClick={() => deleteData(item.id)}
@@ -69,7 +69,7 @@ export default function AdminView() {
                   >
                     Edit
                   </button> */}
-                </th>
+                </td>
               </tr>
             ))}
           </tbody>
