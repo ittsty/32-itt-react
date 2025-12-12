@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@layer base {
+  h1 {
+    @apply text-5xl font-bold mb-4 text-gray-800;
+  }
+}
+
+th,td{
+    border-width: 1px;
+    border-color: var(--color-gray-400);
+    padding: calc(var(--spacing) * 2)
+}
